@@ -1,59 +1,70 @@
-# TwistedMountainAnimation
+# ACME User Management
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+This project is an Angular 19 and Node (v22) application that provides a user management interface with a focus on modular architecture and effective state management using RxJS.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Dynamic table view displaying user data from a JSON API
+- Inline editing capability for all fields
+- Detail view for individual users
+- Dynamically generated table headers based on the data structure
+- Responsive design using ng-bootstrap 18
+
+## Project Structure
+
+The application follows a modular architecture:
+
+- **Core Module**: Contains essential services and models used throughout the app
+  - State Management Service
+  - User Service
+  - Application Models
+
+- **Feature(Pages) Modules**: Contains domain-specific functionality
+  - User Management Module
+    - User List Component
+    - User Detail Component
+
+- **Shared Module**: Contains reusable components
+  - Editable Table Component
+
+## Development Setup
+
+### Prerequisites
+
+- Node.js (v22 or latest LTS version)
+- Angular CLI 19.x
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
+4. Navigate to `http://localhost:4200/`
+
+## State Management
+
+The application uses RxJS for state management, providing a clean, reactive approach:
+
+- BehaviorSubjects maintain the current state
+- Observable streams expose the state to components
+- Services handle state updates and business logic
+
+## Build and Deployment
+
+### Build
 
 ```bash
-ng serve
+ng build --configuration production
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The build artifacts will be stored in the `dist/` directory.
 
-## Code scaffolding
+### Deployment
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This application can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.) using the build artifacts.
