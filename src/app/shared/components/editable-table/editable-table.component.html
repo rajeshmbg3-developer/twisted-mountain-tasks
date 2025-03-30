@@ -1,0 +1,41 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns" class="text-capitalize">{{ column }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data" (click)="onRowClick(row, $event)" style="cursor: pointer;">
+        <td *ngFor="let column of columns">
+          <ng-container *ngIf="!isEditing(row.id, column); else editField">
+            <span (dblclick)="startEdit(row.id, column, row[column]); $event.stopPropagation();" (click)="$event.stopPropagation()">
+              {{ formatValue(row[column]) }}
+            </span>
+          </ng-container>
+          <ng-template #editField>
+            <div class="input-group">
+              <input 
+                type="text" 
+                class="form-control form-control-sm" 
+                [(ngModel)]="editableData[row.id + '-' + column]"
+                (click)="$event.stopPropagation()"
+                (keydown.enter)="saveEdit(row, column)"
+                (keydown.esc)="cancelEdit(row.id, column)"
+                autofocus
+              >
+              <div class="input-group-append ms-2">
+                <button class="btn btn-sm btn-success me-1" (click)="saveEdit(row, column); $event.stopPropagation();">
+                  <i class="bi bi-check"></i>
+                </button>
+                <button class="btn btn-sm btn-secondary" (click)="cancelEdit(row.id, column); $event.stopPropagation();">
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

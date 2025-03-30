@@ -3,12 +3,10 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-pages',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './pages.component.html',
+  styleUrl: './pages.component.scss',
 })
-export class AppComponent {
-  title = 'twisted-mountain-animation';
-}
+export class PagesComponent {}

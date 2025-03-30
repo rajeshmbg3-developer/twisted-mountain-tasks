@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="d-flex justify-content-between">
+          <h1>User Details</h1>
+          <button class="btn btn-primary mb-3" (click)="goBack()">
+            <i class="bi bi-arrow-left"></i> Back to Users
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <ng-container *ngIf="loading">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </ng-container>
+  
+        <ng-container *ngIf="error">
+          <div class="alert alert-danger" role="alert">
+            {{ error }}
+          </div>
+        </ng-container>
+  
+        <ng-container *ngIf="!(loading || error) && (user$ | async) as user">
+          <div class="card">
+            <div class="card-body">
+              <div class="row" *ngFor="let key of user | keyvalue">
+                <div class="col-md-3 fw-bold text-capitalize">{{ key.key }}</div>
+                <div class="col-md-9">
+                  <ng-container *ngIf="key.value !== null && key.value !== undefined; else emptyValue">
+                    <ng-container *ngIf="isObject(key.value); else simpleValue">
+                      <pre>{{ key.value | json }}</pre>
+                    </ng-container>
+                    <ng-template #simpleValue>{{ key.value }}</ng-template>
+                  </ng-container>
+                  <ng-template #emptyValue><em>Not provided</em></ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
