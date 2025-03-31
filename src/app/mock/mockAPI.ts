@@ -1,3 +1,6 @@
+/**
+ * Stored mock data for working in absence of API or API not working.
+ */
 export const MOCK_DATA = [
     {
         "name": "Adeel Solangi",

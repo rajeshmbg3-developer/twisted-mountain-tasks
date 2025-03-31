@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { User } from '@app/core/models/user.model';
 import { StateService } from '@app/core/services/state.service';
 import { UserService } from '@app/core/services/user.service';
-import { EditableTableComponent } from '@app/shared/components/editable-table/editable-table.component';
+import { EditableTableComponent } from '@app/common/components/editable-table/editable-table.component';
 import { Observable } from 'rxjs';
 
 @Component({

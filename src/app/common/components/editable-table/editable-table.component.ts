@@ -3,6 +3,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChange
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { APP_PATHS } from '@app/app.paths';
+import { ModalService } from '@app/core/services/modal.service';
 
 @Component({
   selector: 'app-editable-table',
@@ -19,7 +20,7 @@ export class EditableTableComponent implements OnInit, OnChanges {
   editState: { [key: string]: boolean } = {};
   editableData: { [key: string]: any } = {};
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private modalService: ModalService) { }
 
   ngOnInit(): void { };
 
@@ -47,6 +48,10 @@ export class EditableTableComponent implements OnInit, OnChanges {
 
   // Start editing a cell
   startEdit(rowId: number, column: string, value: any): void {
+    if (column === 'id') {
+      this.modalService.openModal('Information', "Oops! ID can't be changed.");
+      return
+    }
     const key = `${rowId}-${column}`;
     this.editState[key] = true;
     this.editableData[key] = value;

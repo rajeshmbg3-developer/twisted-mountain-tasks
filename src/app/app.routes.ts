@@ -23,7 +23,7 @@ export const routes: Routes = [
   {
     path: 'error',
     loadComponent: () =>
-      import('./common/error-slate/error-slate.component').then((comp) => comp.ErrorSlateComponent),
+      import('./common/components/error-slate/error-slate.component').then((comp) => comp.ErrorSlateComponent),
   },
   {
     path: '**',

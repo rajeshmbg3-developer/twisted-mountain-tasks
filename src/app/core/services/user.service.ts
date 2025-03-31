@@ -42,4 +42,10 @@ export class UserService {
             map(users => users.find(user => user.id === id))
         );
     }
+
+    // This could fetch from an API, database, or static config
+    async getIds(): Promise<string[]> {
+        // Implementation depends on your data source
+        return ['1', '2', '3']; // Example static IDs
+    }
 }

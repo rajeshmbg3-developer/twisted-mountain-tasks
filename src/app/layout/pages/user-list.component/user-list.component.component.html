@@ -24,9 +24,13 @@
             </ng-container>
 
             <ng-container *ngIf="!(loading || error)">
-                <app-editable-table [data]="(users$ | async) || []" [columns]="(columns$ | async) || []"
-                    (rowEdit)="handleRowEdit($event)">
-                </app-editable-table>
+                <div class="card mb-4" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+                    <div class="card-body">
+                        <app-editable-table [data]="(users$ | async) || []" [columns]="(columns$ | async) || []"
+                            (rowEdit)="handleRowEdit($event)">
+                        </app-editable-table>
+                    </div>
+                </div>
             </ng-container>
         </div>
     </div>

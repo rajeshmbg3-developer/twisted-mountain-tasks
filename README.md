@@ -67,4 +67,8 @@ The build artifacts will be stored in the `dist/` directory.
 
 ### Deployment
 
-This application can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.) using the build artifacts.
+This application deployed to static hosting service [Netlify](https://67ea5064c3c77d3f80023cf9--aesthetic-fenglisu-147ca6.netlify.app/pages/users) using the build artifacts.
+
+## Support
+
+For support, email rajeshmbg3.developer.com or join our Slack channel.

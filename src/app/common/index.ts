@@ -1,1 +1,1 @@
-export * from './error-slate/error-slate.component';
+export * from './components/error-slate/error-slate.component';
