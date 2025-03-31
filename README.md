@@ -69,7 +69,7 @@ The build artifacts will be stored in the `dist/` directory.
 
 ### Deployment
 
-This application deployed to static hosting service [Netlify](https://67ea5064c3c77d3f80023cf9--aesthetic-fenglisu-147ca6.netlify.app/pages/users) using the build artifacts.
+This application deployed to static hosting service [Netlify](https://dulcet-creponne-9453ed.netlify.app/pages/users) using the build artifacts.
 
 ## Support
 
