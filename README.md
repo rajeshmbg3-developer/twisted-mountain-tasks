@@ -24,8 +24,10 @@ The application follows a modular architecture:
     - User List Component
     - User Detail Component
 
-- **Shared Module**: Contains reusable components
+- **Shared Module (common)**: Contains reusable components
   - Editable Table Component
+  - Error Slate Component
+  - Modal Component
 
 ## Development Setup
 
@@ -71,4 +73,4 @@ This application deployed to static hosting service [Netlify](https://67ea5064c3
 
 ## Support
 
-For support, email rajeshmbg3.developer.com or join our Slack channel.
+For support, email rajeshmbg3.developer.com .
